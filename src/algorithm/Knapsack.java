@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// 0/1 Knapsack Problem
+
 public class Knapsack {
 	public static void main(String[] args) throws Exception {
 
@@ -63,47 +65,19 @@ public class Knapsack {
 		List<Integer> re = new ArrayList<Integer>();
 		for (int num = 1; num <= N; num++) {
 			if (tmpInt != V[num][W]) {
-				tmpInt=V[num][W];
+				tmpInt = V[num][W];
 				re.add(num - 1);
 			}
 		}
 
-		//System.out.println("re size = " + re.size());
+		// System.out.println("re size = " + re.size());
 
 		for (Integer a : re)
-			System.out.print(thing.get(a)+", ");
+			System.out.print(thing.get(a) + ", ");
 		System.out.println();
 
-		//System.out.println(thing.toString());
+		// System.out.println(thing.toString());
 
 		return V[N][W];
-	}
-}
-
-class Thing {
-	String name;
-	int weight;
-	int price;
-
-	Thing(String name, int weight, int price) {
-		this.name = name;
-		this.weight = weight;
-		this.price = price;
-	}
-
-	public String toString() {
-		return String.format("(%s, %d, %d)", name, weight, price);
-	}
-
-	public int getWeight() {
-		return this.weight;
-	}
-
-	public int getPrice() {
-		return this.price;
-	}
-
-	public String getName() {
-		return this.name;
 	}
 }
